@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from "react";
+import Input from "./components/input/Input";
+import FetchData from "./components/fetchData/Fetch-data";
+import { Provider } from "react-redux";
+import { CreateReduxStore } from "./redux/store";
+import Counter from "./components/counter/Counter";
+const App = () => {
+	return (
+		<Provider store={CreateReduxStore()}>
+			<div>
+				<Input />
+				<p>---------------------</p>
+				<FetchData />
+				<p>---------------------</p>
+				<Counter />
+			</div>
+		</Provider>
+	);
+};
 
 export default App;
